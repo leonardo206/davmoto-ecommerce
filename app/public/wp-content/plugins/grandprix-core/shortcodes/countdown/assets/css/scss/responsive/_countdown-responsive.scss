@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Countdown shortcode responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape {
+	
+	.mkdf-countdown {
+		
+		.countdown-row {
+			
+			.countdown-section {
+				
+				.countdown-amount {
+					font-size: 60px;
+				}
+			}
+		}
+	}
+}
+
+@include ipad-portrait {
+    
+    .mkdf-countdown {
+        
+        .countdown-row {
+	        
+            &.countdown-show4,
+            &.countdown-show5,
+            &.countdown-show6 {
+	
+	            .countdown-section {
+		            width: calc(33.33333333333333% - 2.45%);
+	            }
+            }
+	
+	        .countdown-section {
+		
+		        .countdown-amount {
+			        font-size: 80px;
+		        }
+		
+		        &:nth-child(4),
+		        &:nth-child(5) {
+			        margin-top: 15px;
+		        }
+	        }
+        }
+    }
+}
+
+@include phone-landscape {
+	
+	.mkdf-countdown {
+		
+		.countdown-row {
+			
+			.countdown-section {
+				padding: 19px 20px 33px;
+				
+				&:not(:last-child) {
+					margin: 0 7px 7px 0;
+				}
+				
+				.countdown-period {
+					margin: 0 0 24px;
+				}
+			}
+			
+			&.countdown-show4,
+			&.countdown-show5,
+			&.countdown-show6 {
+				
+				.countdown-section {
+					width: calc(50% - 7px);
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Countdown shortcode responsive style - end
+   ========================================================================== */

@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Anchor Menu shortcode styles begin
+   ========================================================================== */
+
+.mkdf-anchor-menu {
+	position: fixed;
+	top: 50%;
+	left: 48px;
+	transform: translateY(-50%);
+	transition: transform .3s;
+	visibility: hidden;
+	z-index: 200; //more than title and content
+	
+	&.mkdf-init {
+		visibility: visible;
+	}
+	
+	.mkdf-anchor-menu-items {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		counter-reset: section;
+	}
+	
+	.mkdf-anchor {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin: 7px 0;
+		@include mkdfHeadingStyle(h5);
+		transition: font-size .2s ease;
+		
+		&:before {
+			position: relative;
+			top: -2px;
+			counter-increment: section;
+			content: counter(section, decimal-leading-zero);
+			margin-right: 8px;
+			font-family: $default-text-font;
+			font-size: 13px;
+			font-weight: 700;
+			opacity: .48;
+		}
+		
+		&.mkdf-active {
+			font-size: 30px;
+		}
+	}
+}
+
+/* ==========================================================================
+   Anchor Menu shortcode styles end
+   ========================================================================== */

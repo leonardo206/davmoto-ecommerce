@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Item Showcase shortcode style - begin
+   ========================================================================== */
+
+.mkdf-item-showcase-holder {
+	@include mkdfRelativeHolderLayout();
+	text-align: center;
+	opacity: 0;
+	
+	.mkdf-is-image {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		float: left;
+		width: 40%;
+		margin-top: -20px;
+		opacity: 0;
+		transform: translateY(70px);
+		
+		&.mkdf-appeared {
+			transition: opacity .55s cubic-bezier(0.23, 1, 0.32, 1), transform .55s cubic-bezier(0.23, 1, 0.32, 1);
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	
+	.mkdf-is-item-holder {
+		display: inline-block;
+		vertical-align: middle;
+		width: 30%;
+		
+		&.mkdf-is-left-holder {
+			float: left;
+		}
+		
+		&.mkdf-is-right-holder {
+			float: right;
+		}
+		
+		.mkdf-is-item:first-child {
+			margin: 0;
+		}
+	}
+
+	.mkdf-is-item {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		margin: 65px 0 0;
+		opacity: 0;
+
+		&.mkdf-is-left {
+			padding-right: 20px;
+			text-align: right;
+			transform: translateX(-70px);
+			
+			.mkdf-is-content {
+				padding: 0 13px 0 0;
+			}
+		}
+		
+		&.mkdf-is-right {
+			padding-left: 20px;
+			flex-direction: row-reverse;
+			text-align: left;
+			transform: translateX(70px);
+			
+			.mkdf-is-content {
+				padding: 0 0 0 13px;
+			}
+		}
+		
+		&.mkdf-appeared {
+		    transition: opacity .55s cubic-bezier(0.23, 1, 0.32, 1), transform .55s cubic-bezier(0.23, 1, 0.32, 1);
+		    opacity: 1;
+		    transform: translateX(0);
+		}
+		
+		.mkdf-is-content {
+			@include mkdfRelativeHolderLayout();
+			box-sizing: border-box;
+		}
+		
+		.mkdf-is-title {
+			margin: 0;
+		}
+		
+		.mkdf-is-text {
+			margin: 11px 0 0;
+		}
+	}
+	
+	.mkdf-is-mark {
+		position: relative;
+		display: inline-block;
+		margin-top: -4px;
+		font-family: $default-heading-font;
+		font-size: 40px;
+		line-height: 1;
+		font-weight: 700;
+		color: #e4e1e5;
+	}
+}
+/* ==========================================================================
+   Item Showcase shortcode style - end
+   ========================================================================== */

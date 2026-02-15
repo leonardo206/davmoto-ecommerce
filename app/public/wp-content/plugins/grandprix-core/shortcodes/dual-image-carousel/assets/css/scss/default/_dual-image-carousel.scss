@@ -1,0 +1,366 @@
+/* ==========================================================================
+   Dual Image Carousel shortcode style - begin
+   ========================================================================== */
+
+.mkdf-dual-image-carousel.swiper-container {
+
+	.swiper-wrapper {
+		width: 100%;
+        margin: 0 auto;
+
+		.swiper-slide {
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			text-align: center;
+			width: 52%;
+			cursor: grab;
+
+			.mkdf-slide-foreground-image-holder {
+				position: relative;
+				margin-top: -32%;
+			}
+		}
+		
+		.mkdf-slide-background-image {
+			position: relative;
+			display: inline-block;
+			padding: 0;
+			margin: 0;
+			
+			img {
+				display: block;
+			}
+		}
+		
+		.mkdf-slide-info-holder {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 33.9%;
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+			
+			&:before {
+				content: '';
+				@include mkdfAbsoluteHolderLayout();
+				background-color: rgba($first-main-color, .9);
+				transform: scaleX(0);
+				transform-origin: left;
+				transition: .4s cubic-bezier(0.47, 0, 0.75, 0.72);
+			}
+		}
+		
+		.swiper-slide-active {
+			
+			.mkdf-slide-info-holder {
+				
+				&:before {
+					transform: scaleX(1);
+				}
+				
+				.mkdf-slide-info {
+					.mkdf-slide-tagline span,
+					.mkdf-slide-title a,
+					a.mkdf-btn {
+						opacity: 1;
+						transform: translateX(0);
+					}
+				}
+				
+				.mkdf-slide-custom-mark {
+					.mkdf-split-character {
+						transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+						opacity: 1;
+						transition: .5s  cubic-bezier(0.455, 0.03, 0.515, 0.955);
+						
+						@for $i from 1 to 15 {
+							&:nth-child(#{$i}) {
+								transition-delay: #{0.15 + $i * .1}s;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		.mkdf-slide-info {
+			position: absolute;
+			display: block;
+			width: 100%;
+			padding: 49px 17.8% 0;
+			top: 0;
+			left: 0;
+			text-align: left;
+			box-sizing: border-box;
+			z-index: 1;
+			
+			> * {
+				color: #fff;
+			}
+			
+			.mkdf-slide-tagline {
+				@include mkdfTagLineStyle(small);
+				line-height: 1;
+				color: #fff;
+				
+				span {
+					display: inline-block;
+					opacity: 0;
+					transform: translateX(-15px);
+					transition: all .3s ease .14s;
+				}
+			}
+			
+			.mkdf-slide-title {
+				margin: 0;
+				
+				a {
+					display: inline-block;
+					opacity: 0;
+					transform: translateX(-15px);
+					transition: all .3s ease .2s;
+					
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+			
+			a.mkdf-btn {
+				padding: 0;
+				margin-top: 12px;
+				
+				opacity: 0;
+				transform: translateX(-15px);
+				transition: all .3s ease .28s;
+				
+				@include ipad-portrait {
+					font-size: 12px;
+				}
+				
+				@include phone-landscape {
+					margin-top: 0;
+				}
+			}
+		}
+		
+		.mkdf-slide-custom-mark {
+			@include mkdfCustomMarkStyle(250px);
+			position: relative;
+			display: flex;
+			
+			.mkdf-split-character {
+				opacity: 0;
+				transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, -30, -1, 1);
+				perspective: 600px;
+				transform-origin: 50% 50% 0px;
+				transition: .3s  cubic-bezier(0.455, 0.03, 0.515, 0.955);
+				transition-delay: -.2s;
+			}
+		}
+	}
+	
+	.mkdf-custom-pagination {
+		position: relative;
+		width: 45.2%;
+		margin: 50px auto 0;
+		
+		.mkdf-pagination-line-holder {
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			top: 10px;
+			
+			.mkdf-pagination-line{
+				background-color: red;
+				position: relative;
+				top: -6px;
+				left: 0;
+				display: inline-block;
+				height: 100%;
+				width: 150px;
+				z-index: 10;
+				transition: left .3s ease-in-out;
+				pointer-events: none;
+			}
+		}
+	}
+	
+	.swiper-pagination {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		counter-reset: counter;
+	}
+	
+	.swiper-pagination-bullets {
+		top: 0;
+		background-color: transparent;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 1px;
+			left: 0;
+			top: 50%;
+			background-color: $default-border-color;
+		}
+		
+		&:after {
+			content: '/';
+			position: absolute;
+			display: block;
+			top: -10px;
+			left: 20px;
+			font-family: $default-heading-font;
+			font-size: 14px;
+			font-weight: 700;
+			letter-spacing: .1em;
+			color: $default-heading-color;
+		}
+		
+		.swiper-pagination-bullet {
+			z-index:1;
+			width: 100%;
+			height: 3px;
+			margin: 0;
+			border-radius: 0;
+			background-color: transparent;
+			opacity: 1;
+			overflow: hidden;
+			padding: 20px 0;
+			
+			&:before,
+			&:after {
+				position: absolute;
+				top: -10px;
+				font-family: $default-heading-font;
+				font-size: 14px;
+				font-weight: 700;
+				letter-spacing: .1em;
+				content: counter(counter,decimal-leading-zero);
+				color: $default-heading-color;
+				pointer-events: none;
+			}
+			
+			&:before {
+				left: 30px;
+				color: #bebbbf;
+				counter-increment: counter;
+				visibility: hidden;
+			}
+			
+			&:last-child:before {
+				visibility: visible;
+			}
+			
+			&:after {
+				left: 0;
+				display: none;
+			}
+		}
+		
+		.swiper-pagination-bullet-active {
+			&:after {
+				display: block;
+			}
+		}
+	}
+
+	.swiper-navigation {
+
+		.mkdf-swiper-button {
+			position: absolute;
+			top: 50%;
+			z-index: 1;
+			font-size: 25px;
+			color: #fff;
+			width: 45px;
+			height: 45px;
+			background-color: #1c1c1c;
+			text-align: center;
+			cursor: pointer;
+			z-index: 10;
+			transition: all .15s ease-in-out;
+
+			> span {
+				display: block;
+    			top: calc( 50% - 1px);
+    			position: relative;
+    			transform: translate3d(0,-50%,0);
+				transition: all .15s ease-in-out;
+			}
+
+			&.mkdf-swiper-button-prev {
+	    		left: 0;
+	    		transform: translateY(-50%);
+
+	    		&:hover {
+	    			span {
+	    				transform: translate3d(-10%,-50%,0);
+	    			}
+	    		}
+	    	}
+
+	    	&.mkdf-swiper-button-next {
+	    		left: 100%;
+	    		transform: translate(-100%, -50%);
+
+	    		&:hover {
+	    			span {
+	    				transform: translate3d(10%,-50%,0);
+	    			}
+	    		}
+	    	}
+		}
+	}
+}
+
+.mkdf-pagination-synced-slider {
+	margin: -30px auto 0;
+	padding: 0 !important;
+	width: 45.2%;
+	top: 0;
+	
+	.slick-list {
+		padding: 0 !important;
+	}
+
+	.mkdf-synced-slide {
+	    background-color: transparent;
+	    height: auto;
+	    font-size: 16px;
+    	font-weight: 700;
+    	line-height: 1.3em;
+    	letter-spacing: -0.08px;
+    	color: $default-heading-color;
+    	font-family: $default-heading-font;
+    	text-transform: uppercase;
+    	opacity: 0;
+		cursor: pointer;
+		text-align: right;
+		
+		.mkdf-synced-slide-inner {
+			display: inline-block;
+		}
+		
+		&.slick-current {
+			opacity: 1;
+		}
+	}
+
+}
+
+/* ==========================================================================
+   Dual Image Carousel shortcode style - end
+   ========================================================================== */

@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Item Showcase Specific shortcode responsive style - begin
+   ========================================================================== */
+.mkdf-item-showcase-specific-holder {
+	
+	@include ipad-landscape {
+		
+		&.mkdf-iss-text-left {
+			
+			.mkdf-iss-content {
+				flex-direction: column-reverse;
+				
+				.mkdf-iss-info-section {
+					padding-right: 0;
+					margin-top: 75px;
+				}
+			}
+		}
+		
+		&.mkdf-iss-text-right {
+			
+			.mkdf-iss-content {
+				flex-direction: column-reverse;
+				
+				.mkdf-iss-info-section {
+					padding-left: 0;
+					margin-top: 75px;
+				}
+			}
+		}
+		
+		.mkdf-iss-info-section,
+		.mkdf-iss-media-section {
+			width: 100%;
+		}
+		
+		.mkdf-iss-media-section {
+			
+			.mkdf-iss-main-image-holder {
+				
+				img {
+					transform: none !important;
+				}
+			}
+		}
+	}
+	
+	@include phone-landscape {
+		
+		.mkdf-iss-media-section {
+			flex-direction: column;
+			
+			.mkdf-iss-al-and-si-holder {
+				margin-right: 0;
+				margin-bottom: 10%;
+				width: 100%;
+				
+				.mkdf-iss-second-image {
+					display: none;
+				}
+			}
+			
+			.mkdf-iss-additional-link-holder {
+				position: absolute;
+				top: -1.2%;
+				left: 0;
+				max-width: 100%;
+			}
+			
+			.mkdf-iss-main-image-holder {
+				width: 100%;
+				margin-right: 0;
+			}
+			
+			.mkdf-iss-icon-holder {
+				display: none;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Item Showcase Specific shortcode responsive style - end
+   ========================================================================== */

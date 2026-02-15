@@ -1,0 +1,356 @@
+/* ==========================================================================
+   Portfolio Single navigation style - begin
+   ========================================================================== */
+
+.mkdf-ps-navigation {
+	display: flex;
+	align-content: center;
+	height: 60px;
+	margin: 60px 0 0;
+
+    .mkdf-ps-full-width-custom-layout & {
+        padding: 0 40px;
+    }
+	
+	.mkdf-ps-back-btn {
+		align-self: center;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		
+		a {
+			display: block;
+			background-color: $first-main-color;
+			border-radius: $default-border-radius;
+			padding: 19px;
+		}
+		
+		.mkdf-sa-circles {
+			display: flex;
+			height: 100%;
+			width: 100%;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			
+		}
+		
+		.mkdf-sa-circles-row {
+			margin-bottom: 4px;
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-start;
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+			
+			span {
+				position: relative;
+				display: inline-block;
+				margin-right: 4px;
+				width: 4px;
+				height: 4px;
+				background-color: #fff;
+				border-radius: $default-border-radius;
+				box-sizing: border-box;
+				
+				&:last-child {
+					margin-right: 0;
+				}
+				
+				transform: translate3d(0,0,0);
+				transition: .11s cubic-bezier(0.4, 0, 1, 1);
+			}
+		}
+		
+		&:hover {
+			.mkdf-sa-circles {
+				.mkdf-sa-circles-row {
+					@for $i from 1 through 4 {
+						$animation-delay: $i * .038s;
+						
+						&.mkdf-sa-row-1 {
+							span {
+								&:nth-child(#{$i}) {
+									transition-delay: $animation-delay;
+								}
+								
+								&:nth-child(1){
+									transform: translate3d(-3px, -2px, 0);
+								}
+								
+								&:nth-child(2){
+									transform: translate3d(-1px, -2px, 0);
+								}
+								
+								&:nth-child(3){
+									transform: translate3d(1px, -2px, 0);
+								}
+								
+								&:nth-child(4){
+									transform: translate3d(3px, -2px, 0);
+								}
+							}
+						}
+						
+						&.mkdf-sa-row-2 {
+							span {
+								&:nth-child(#{$i}) {
+									transition-delay: $animation-delay + .07s;
+								}
+							}
+							
+							span {
+								
+								&:nth-child(1){
+									transform: translate3d(-3px, 0, 0);
+								}
+								
+								&:nth-child(2){
+									transform: translate3d(-1px, 0, 0);
+								}
+								
+								&:nth-child(3){
+									transform: translate3d(1px, 0, 0);
+								}
+								
+								&:nth-child(4){
+									transform: translate3d(3px, 0, 0);
+								}
+							}
+						}
+						
+						&.mkdf-sa-row-3 {
+							span {
+								&:nth-child(#{$i}) {
+									transition-delay: $animation-delay + .14s;
+								}
+							}
+							
+							span {
+								&:nth-child(#{$i}) {
+									animation-delay: $animation-delay;
+								}
+								
+								&:nth-child(1){
+									transform: translate(-2px, 2px);
+								}
+								
+								&:nth-child(2){
+									transform: translate(-1px, 2px);
+								}
+								
+								&:nth-child(3){
+									transform: translate(1px, 2px);
+								}
+								
+								&:nth-child(4){
+									transform: translate(2px, 2px);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.mkdf-pag-prev,
+	.mkdf-pag-next {
+		
+		a {
+			display: block;
+			position: absolute;
+			font-family: $default-heading-font;
+			font-size: 14px;
+			font-weight: 700;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+			line-height: 60px;
+			color: $default-heading-color;
+			transition: all .3s ease;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 79px;
+				height: 60px;
+				color: inherit;
+				border: 1px solid $default-border-color;
+				box-sizing: border-box;
+				transition: width .3s ease;
+			}
+			
+			&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 74px;
+				height: 1px;
+				top: calc(50% - 1px);
+				background-color: currentColor;
+				transform: scaleX(1);
+				opacity: 1;
+				transition: all .3s ease;
+				
+				@include phone-landscape {
+					width: 50px;
+				}
+			}
+			
+			.mkdf-nav-label {
+				position: relative;
+				display: inline-block;
+				transition: all .3s ease;
+				
+				&:before {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 74px;
+					height: 1px;
+					top: calc(50% - 1px);
+					background-color: currentColor;
+					transition: all .3s ease;
+					transform: scaleX(0);
+					opacity: .4;
+				}
+			}
+			
+			.mkdf-nav-mark {
+				position: relative;
+				display: inline-block;
+				font-size: 13px;
+			}
+			
+			&:hover {
+				
+				&:before {
+					width: calc(100% + 55px);
+				}
+				
+				&:after {
+					transform: scaleX(0);
+					opacity: .4;
+				}
+				
+				.mkdf-nav-mark {
+					&:before {
+						transform: scaleX(1);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	
+	.mkdf-pag-prev {
+		float: left;
+		
+		a {
+			left: 0;
+			
+			&:before {
+				left: 0;
+			}
+			
+			&:after {
+				left: 43px;
+				transform-origin: left;
+			}
+			
+			.mkdf-nav-mark {
+				margin: 0 0 0 122px;
+				right: 87px;
+				transform: scaleX(-1);
+			}
+			
+			.mkdf-nav-label {
+				&:before{
+					left: calc(100% + 20px);
+					transform-origin: left;
+				}
+			}
+			
+			&:hover {
+				.mkdf-nav-label {
+					transform: translateX(-74px);
+					
+					&:before{
+						transform: scaleX(1);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	
+	.mkdf-pag-next {
+		float: right;
+		
+		a {
+			right: 0;
+			
+			&:before {
+				right: 0;
+			}
+			
+			&:after {
+				right: 43px;
+				transform-origin: right;
+			}
+			
+			.mkdf-nav-mark {
+				margin: 0 0 0 122px;
+				right: 35px;
+			}
+			
+			.mkdf-nav-label {
+				&:before{
+					right: calc(100% + 20px);
+					transform-origin: right;
+				}
+			}
+			
+			&:hover {
+				.mkdf-nav-label {
+					transform: translateX(74px);
+					
+					&:before{
+						transform: scaleX(1);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	
+	@media (max-width: $phone-portrait) {
+		
+		.mkdf-pag-prev,
+		.mkdf-pag-next {
+			color: red!important;
+			
+			a {
+				.mkdf-nav-label {
+					display: none;
+				}
+				
+				&:after {
+					width: 50px;
+				}
+				
+				&:hover {
+					&:before {
+						width: 79px;
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio Single navigation style - end
+   ========================================================================== */

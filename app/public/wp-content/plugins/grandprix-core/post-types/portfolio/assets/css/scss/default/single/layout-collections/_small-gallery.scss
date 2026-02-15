@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Portfolio Single - Small Gallery layout style - begin
+   ========================================================================== */
+
+.mkdf-portfolio-single-holder {
+    
+    &.mkdf-ps-small-gallery-layout {
+    
+        .mkdf-ps-image-holder {
+            width: 100%;
+        
+            .mkdf-ps-image {
+                float: left;
+                
+                a  {
+                    overflow: hidden;
+                    
+                    img {
+                        transform: scale(1.1);
+                        transition: .2s cubic-bezier(.45,.05,.46,.96);
+                    }
+                    
+                    &:hover{
+                        img {
+                            transform: scale(1.1) translateX(15px);
+                        }
+                    }
+                }
+            }
+        }
+    
+        .mkdf-ps-content-item {
+            margin: 0 0 29px;
+        }
+    
+        .mkdf-ps-navigation {
+            margin: 100px 0 0;
+        }
+    }
+}
+/* ==========================================================================
+   Portfolio Single - Small Gallery layout style - end
+   ========================================================================== */

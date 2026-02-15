@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Icon With Text shortcode style - begin
+   ========================================================================== */
+
+.mkdf-iwt {
+	@include mkdfRelativeHolderLayout();
+	
+	a {
+		display: block;
+	}
+	
+	.mkdf-iwt-icon {
+		color: #c5c5c5;
+		
+		.mkdf-icon-shortcode {
+			line-height: 1;
+			color: #c5c5c5;
+			
+			&.mkdf-circle,
+			&.mkdf-square {
+				line-height: 2;
+			}
+		}
+	}
+	
+	.mkdf-iwt-title {
+		margin: 0;
+		line-height: 1.2em;
+		
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+	
+	.mkdf-iwt-title-text {
+		display: block;
+		transition: color .2s ease-out;
+	}
+	
+	&:hover {
+		.mkdf-iwt-title-text {
+			color: $first-main-color;
+		}
+	}
+	
+	.mkdf-iwt-text {
+		margin: 12px 0 0;
+		color: $default-text-color;
+	}
+	
+	&.mkdf-iwt-icon-left {
+		width: auto;
+		
+		.mkdf-iwt-icon,
+		.mkdf-iwt-content {
+			display: table-cell;
+			vertical-align: top;
+		}
+		
+		.mkdf-iwt-icon {
+			position: relative;
+			top: 1px;
+			
+			img {
+				max-width: none;
+			}
+		}
+		
+		.mkdf-iwt-content {
+			padding: 0 0 0 32px;
+		}
+		
+		.mkdf-iwt-text {
+			transition: color .2s ease-out;
+		}
+		
+		&:hover {
+			.mkdf-iwt-text {
+				color: $first-main-color;
+			}
+		}
+	}
+	
+	&.mkdf-iwt-icon-left-from-title {
+		
+		.mkdf-iwt-iat-holder {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			min-height: 40px;
+		}
+		
+		.mkdf-iwt-icon,
+		.mkdf-iwt-title-text {
+			position: relative;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		.mkdf-iwt-icon {
+			
+			.mkdf-icon-element {
+				transition: none;
+			}
+			
+			img {
+				display: block;
+				max-width: none;
+			}
+		}
+		
+		.mkdf-iwt-title-text {
+			padding: 0 0 0 32px;
+		}
+		
+		.mkdf-iwt-text {
+			margin: 19px 0 0;
+		}
+	}
+	
+	&.mkdf-iwt-icon-top {
+		
+		.mkdf-iwt-content {
+			padding: 25px 0 0;
+		}
+		
+		&.mkdf-has-appear-animation {
+			.mkdf-iwt-icon {
+				transform: translateY(20px);
+				opacity: 0;
+				transition: .5s .1s cubic-bezier(0.26, -0.29, 0.25, 1.93);
+			}
+			
+			&.mkdf-item-appear {
+				.mkdf-iwt-icon {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Icon With Text shortcode style - end
+   ========================================================================== */

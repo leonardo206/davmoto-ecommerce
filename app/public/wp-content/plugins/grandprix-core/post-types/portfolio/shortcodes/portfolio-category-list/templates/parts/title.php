@@ -1,0 +1,1 @@
+<<?php echo grandprix_mikado_core_escape_title_tag( $title_tag ); ?> itemprop="name" class="mkdf-pcli-title entry-title"><?php echo esc_html( $title ); ?></<?php echo grandprix_mikado_core_escape_title_tag( $title_tag ); ?>>

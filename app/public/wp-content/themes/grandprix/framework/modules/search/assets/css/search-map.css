@@ -1,0 +1,280 @@
+/* ==========================================================================
+   Search styles - begin
+   ========================================================================== */
+/* ==========================================================================
+# Search template style - begin
+========================================================================== */
+.mkdf-search-page-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0 0 80px;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0 0 30px;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-search-title {
+  margin: 0 0 20px;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-search-label {
+  display: block;
+  font-size: 13px;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  margin: 0 0 10px;
+  clear: both;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder .mkdf-column-left {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder .mkdf-column-right {
+  display: table-cell;
+  width: 1%;
+  text-align: left;
+  vertical-align: top;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder .mkdf-search-field {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0 20px 0 3px;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder .mkdf-search-field::-webkit-input-placeholder {
+  color: inherit;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder .mkdf-search-field:-moz-placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder .mkdf-search-field::-moz-placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder .mkdf-search-field:-ms-input-placeholder {
+  color: inherit;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder .mkdf-search-submit {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  font-size: 18px;
+  color: #808080;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+
+.mkdf-search-page-holder .mkdf-search-page-form .mkdf-form-holder .mkdf-search-submit:hover {
+  color: #000;
+}
+
+.mkdf-search-page-holder article {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  padding: 30px 0;
+  margin: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.mkdf-search-page-holder article.sticky .mkdf-post-title a {
+  color: #ed1d24;
+}
+
+.mkdf-search-page-holder article.page .mkdf-post-title-area .mkdf-post-info > div.mkdf-post-info-category {
+  display: none;
+}
+
+.mkdf-search-page-holder article .mkdf-post-content {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.mkdf-search-page-holder article .mkdf-post-image {
+  display: block;
+  float: left;
+  width: 130px;
+}
+
+.mkdf-search-page-holder article .mkdf-post-image a, .mkdf-search-page-holder article .mkdf-post-image img {
+  display: block;
+}
+
+.mkdf-search-page-holder article .mkdf-post-title-area {
+  min-height: 130px;
+  padding: 0 0 0 150px;
+}
+
+.mkdf-search-page-holder article .mkdf-post-title-area.mkdf-no-thumbnail {
+  padding: 0;
+  min-height: inherit;
+}
+
+.mkdf-search-page-holder article .mkdf-post-title-area .mkdf-post-title-area-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mkdf-search-page-holder article .mkdf-post-title-area .mkdf-post-title-area-inner .mkdf-post-title {
+  margin: 0;
+}
+
+.mkdf-search-page-holder article .mkdf-post-title-area .mkdf-post-title-area-inner .mkdf-post-excerpt {
+  margin: 7px 0 0;
+}
+
+.mkdf-search-page-holder .mkdf-blog-pagination {
+  margin: 50px 0 0;
+}
+
+/* ==========================================================================
+# Search template style - end
+========================================================================== */
+/* ==========================================================================
+# Search widget - begin
+========================================================================== */
+.mkdf-search-widget {
+  position: relative;
+  margin: 0 12px;
+  top: -1px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  width: 220px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .mkdf-search-widget {
+    width: 160px;
+  }
+}
+
+@media only screen and (max-width: 1368px) {
+  .mkdf-search-widget {
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .mkdf-search-widget {
+    width: 80px;
+  }
+}
+
+.mkdf-search-widget .mkdf-search-field {
+  margin: 0;
+  padding: 0 0 1px 0;
+  font-size: 16px;
+  letter-spacing: .1em;
+  text-align: right;
+  text-transform: uppercase;
+  border-width: 1px;
+  border-color: #e5e5e5;
+}
+
+.mkdf-ms-explorer .mkdf-search-widget .mkdf-search-field {
+  top: 2px;
+  height: 29px;
+}
+
+.mkdf-search-widget .mkdf-search-widget-wrapper {
+  width: 100%;
+}
+
+.mkdf-search-widget .mkdf-search-widget-wrapper > * {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: inherit;
+}
+
+.mkdf-search-widget .mkdf-search-widget-wrapper > *:before {
+  display: block;
+  line-height: inherit;
+}
+
+.mkdf-light-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-search-widget .mkdf-search-field,
+.mkdf-light-header .mkdf-top-bar .mkdf-search-widget .mkdf-search-field {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.mkdf-light-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-search-widget .mkdf-search-field:focus,
+.mkdf-light-header .mkdf-top-bar .mkdf-search-widget .mkdf-search-field:focus {
+  border-color: #ed1d24;
+}
+
+.mkdf-dark-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-search-widget .mkdf-search-field,
+.mkdf-dark-header .mkdf-top-bar .mkdf-search-widget .mkdf-search-field {
+  color: #000 !important;
+}
+
+.mkdf-dark-header .mkdf-page-header > div:not(.mkdf-sticky-header):not(.fixed) .mkdf-search-widget .mkdf-search-field:focus,
+.mkdf-dark-header .mkdf-top-bar .mkdf-search-widget .mkdf-search-field:focus {
+  border-color: #ed1d24;
+}
+
+/* ==========================================================================
+# Search widget - end
+========================================================================== */
+/* ==========================================================================
+   Search styles - end
+   ========================================================================== */
+
+/*# sourceMappingURL=search-map.css.map */

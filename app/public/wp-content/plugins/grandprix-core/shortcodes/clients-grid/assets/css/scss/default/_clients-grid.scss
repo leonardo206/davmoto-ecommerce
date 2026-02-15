@@ -1,0 +1,63 @@
+/* ==========================================================================
+   clients Holder shortcode style - begin
+   ========================================================================== */
+
+.mkdf-clients-grid-holder {
+	@include mkdfRelativeHolderLayout();
+	text-align: center;
+	
+	&.mkdf-cg-alignment-left {
+		text-align: left;
+	}
+	
+	&.mkdf-cg-alignment-right {
+		text-align: right;
+	}
+	
+	.mkdf-cc-link {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+	}
+	
+	@media only screen and (min-width: $ipad-landscape-plus-pixel) and (max-width: $laptop-landscape-mac) {
+		
+		&.mkdf-grid-list {
+			
+			&.mkdf-five-columns {
+				
+				.mkdf-item-space {
+					width: 20%;
+					
+					&:nth-child(4n+1) {
+						clear: none;
+					}
+					
+					&:nth-child(5n+1) {
+						clear: both;
+					}
+				}
+			}
+		}
+	}
+	
+	@media only screen and (min-width: $phone-landscape-plus-pixel) and (max-width: $ipad-landscape) {
+		
+		&.mkdf-grid-list {
+			
+			&.mkdf-five-columns {
+				
+				.mkdf-cg-inner {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-wrap: wrap;
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   clients Holder shortcode style - end
+   ========================================================================== */

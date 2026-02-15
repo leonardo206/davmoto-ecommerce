@@ -1,0 +1,114 @@
+/* ==========================================================================
+   Section Title shortcode styles - begin
+   ========================================================================== */
+
+.mkdf-section-title-holder {
+    @include mkdfRelativeHolderLayout();
+	box-sizing: border-box;
+	
+	.mkdf-st-tagline {
+		@include mkdfTagLineStyle('normal');
+	}
+	
+    .mkdf-st-title {
+        margin: 6px 0 0;
+    }
+    
+    .mkdf-st-text {
+	    display: block;
+        margin: 19px 0 0;
+    }
+	
+	.mkdf-st-button {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		
+		.mkdf-btn {
+			margin-top: 43px;
+		}
+	}
+	
+	&.mkdf-st-split {
+		
+		.mkdf-st-tagline {
+			@include mkdfTagLineStyle('large');
+		}
+		
+		.mkdf-st-inner {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			margin: 0 -30px;
+			
+			> * {
+				width: 100%;
+				padding: 0 30px;
+			}
+		}
+		
+		.mkdf-st-title {
+			position: relative;
+			display: block;
+			margin: 0;
+			text-align: right;
+			
+			.mkdf-sts-separator {
+				position: absolute;
+				display: block;
+				width: 1px;
+				height: 82%;
+				background-color: #bebbbf;
+				top: 7%;
+				right: -1px;
+			}
+		}
+		
+		&.mkdf-has-appear-animation {
+			
+			.mkdf-sts-separator {
+				transform: scaleY(0);
+				transform-origin: top;
+				transition: .5s ease-in-out .1s;
+			}
+			
+			.mkdf-sts-title-text,
+			.mkdf-st-tagline {
+				display: block;
+				opacity: 0;
+			}
+			
+			.mkdf-sts-title-text{
+				transform: translateX(-70px);
+				/*transition: .55s cubic-bezier(.23,1,.32,1) .3s;*/
+				transition: .5s cubic-bezier(.23,1,.32,1) .4s;
+			}
+			
+			.mkdf-st-tagline{
+				transform: translateX(40px);
+				transition: .3s cubic-bezier(.23,1,.32,1) .6s;
+			}
+			
+			&.mkdf-item-appear {
+				.mkdf-st-tagline {
+					opacity:1;
+				}
+				
+				.mkdf-sts-separator {
+					transform: scaleY(1);
+				}
+				
+				.mkdf-sts-title-text,
+				.mkdf-st-tagline {
+					opacity: 1;
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Section Title shortcode styles - end
+   ========================================================================== */
+
+

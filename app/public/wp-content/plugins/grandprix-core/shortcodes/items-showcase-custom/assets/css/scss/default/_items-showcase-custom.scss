@@ -1,0 +1,474 @@
+/* ==========================================================================
+   Items Showcase Custom shortcode style - begin
+   ========================================================================== */
+
+.mkdf-items-showcase-custom-holder {
+	@include mkdfRelativeHolderLayout();
+	
+	&.mkdf-issc-text-left {
+		
+		.mkdf-issc-content {
+			
+			.mkdf-issc-media-section {
+				padding-left: 144px;
+				
+				.mkdf-ms-explorer & {
+					padding: 0;
+				}
+				
+				@media only screen and (min-width: $ipad-landscape) {
+					
+					.mkdf-ms-explorer & {
+						width: calc(100% - 72px);
+						margin-left: 72px;
+					}
+				}
+				
+				@include ipad-landscape {
+					padding-left: 50px;
+				}
+				
+				@include ipad-portrait {
+					padding-top: calc(100% + 80px);
+					padding-left: 0;
+				}
+				
+				@include phone-landscape {
+					padding-top: calc(100% + 30px);
+				}
+			}
+			
+			.mkdf-issc-info-section {
+				
+				@media only screen and (min-width: $ipad-landscape) {
+					.mkdf-ms-explorer & {
+						width: calc(100% - 72px);
+						margin-right: 72px;
+					}
+				}
+			}
+		}
+	}
+	
+	&.mkdf-issc-text-right {
+		
+		.mkdf-issc-content {
+			flex-direction: row-reverse;
+			
+			.mkdf-issc-media-section {
+				padding-right: 144px;
+				
+				.mkdf-ms-explorer & {
+					padding: 0;
+				}
+				
+				@media only screen and (min-width: $ipad-landscape) {
+					
+					.mkdf-ms-explorer & {
+						width: calc(100% - 72px);
+						margin-right: 72px;
+					}
+				}
+				
+				@include ipad-landscape {
+					padding-right: 50px;
+				}
+				
+				@include ipad-portrait {
+					padding-top: calc(100% + 80px);
+					padding-right: 0;
+				}
+				
+				@include phone-landscape {
+					padding-top: calc(100% + 30px);
+				}
+			}
+			
+			.mkdf-issc-info-section {
+				
+				@media only screen and (min-width: $ipad-landscape) {
+					.mkdf-ms-explorer & {
+						width: calc(100% - 72px);
+						margin-left: 72px;
+					}
+				}
+			}
+		}
+	}
+	
+	&.mkdf-has-appear-animation {
+		.mkdf-issc-info-section {
+			opacity: 0;
+			transform: scale(.6);
+			transition: .35s ease-in-out .3s;
+		}
+		
+		.mkdf-issc-content {
+			.mkdf-issc-icon {
+				opacity: 0;
+				
+				&:first-of-type{
+					transform: translateX(30px);
+				}
+				
+				&:nth-of-type(2){
+					transform: translateX(-30px);
+				}
+				
+				&:nth-of-type(3){
+					transform: translateY(10px) translateX(-30px);
+				}
+			}
+		}
+		
+		&.mkdf-item-appear {
+			
+			.mkdf-issc-info-section{
+				opacity: 1;
+				transform: scale(1);
+			}
+			
+			.mkdf-issc-content {
+				
+				.mkdf-issc-main-image-holder {
+					
+					.mkdf-issc-icon {
+						opacity: 1;
+						transition: .3s ease-in-out;
+						transform: translateX(0) translateY(0);
+						
+						&:first-of-type {
+							transition-delay: .7s;
+						}
+						
+						&:nth-of-type(2) {
+							transition-delay: .8s;
+						}
+						
+						&:nth-of-type(3) {
+							transition-delay: .9s;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.mkdf-issc-content {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		
+		@include ipad-portrait {
+			flex-direction: column;
+		}
+		
+		.mkdf-issc-info-section {
+			@include mkdfRelativeHolderLayout();
+			z-index: 1;
+			
+			.mkdf-issc-image {
+				@include mkdfRelativeHolderLayout();
+				
+				img {
+					display: block;
+				}
+			}
+		}
+		
+		.mkdf-issc-main-image-holder {
+			@include mkdfAbsoluteHolderLayout();
+			opacity: 0;
+			z-index: 1;
+			transition: opacity .3s ease-in-out;
+			
+			&.mkdf-active {
+				opacity: 1;
+				z-index: 10;
+				
+				.mkdf-issc-icon {
+					transition-delay: 0s!important;
+				}
+			}
+		}
+		
+		.mkdf-issc-media-section {
+			@include mkdfRelativeHolderLayout();
+		}
+		
+		.mkdf-angle {
+			position: absolute;
+			display: block;
+			z-index: 1;
+			
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				margin: 10px;
+				box-sizing: border-box;
+				background-color: $first-main-color;
+			}
+			
+			&:before {
+				width: 0;
+				height: 1px;
+				transition:  .05s width ease;
+			}
+			
+			&:after {
+				width: 1px;
+				height: 0;
+				transition:  .05s height ease;
+			}
+			
+			&.one {
+				top: 0;
+				left: 0;
+			}
+			
+			&.two {
+				top: 0;
+				right: 0;
+				
+				&:before,
+				&:after {
+					right: 0;
+				}
+			}
+			
+			&.three {
+				bottom: 0;
+				left: 0;
+				
+				&:before,
+				&:after {
+					bottom: 0;
+				}
+			}
+			
+			&.four {
+				bottom: 0;
+				right: 0;
+				
+				&:before,
+				&:after {
+					right: 0;
+					bottom: 0;
+				}
+			}
+		}
+		
+		.mkdf-issc-media-image {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 50%;
+			float: left;
+			background-color: #0d0d0d;
+			border-top: 1px solid;
+			border-left: 1px solid;
+			border-color: $additional-border-color;
+			box-sizing: border-box;
+			cursor: pointer;
+			
+			&:first-child {
+				border-top-left-radius: $default-border-radius;
+			}
+			
+			&:nth-child(2) {
+				border-top-right-radius: $default-border-radius;
+			}
+			
+			&:nth-child(2n) {
+				border-right: 1px solid $additional-border-color;
+			}
+			
+			&:nth-child(2n+1) {
+				clear: both;
+				width: calc(50% - 1px);
+			}
+			
+			&:last-child,
+			&:nth-last-child(2) {
+				border-bottom: 1px solid $additional-border-color;
+			}
+			
+			&:nth-last-child(2) {
+				border-bottom-left-radius: $default-border-radius;
+			}
+			
+			&:last-child {
+				border-right: 1px solid $additional-border-color;
+				border-bottom-right-radius: $default-border-radius;
+			}
+			
+			&.mkdf-active {
+				background-color: #000;
+				
+				.mkdf-angle {
+					&:before {
+						width: 30px;
+						transition: .3s width ease;
+					}
+					
+					&:after {
+						height: 30px;
+						transition: .3s height ease;
+					}
+				}
+			}
+			
+			img {
+				display: block;
+				transform: scale(.6);
+			}
+		}
+		
+		.mkdf-issc-icon {
+			position: absolute;
+			display: block;
+			width: 44px;
+			height: 44px;
+			line-height: 46px;
+			text-align: center;
+			color: $default-heading-color;
+			background-color: #fff;
+			border-radius: $default-border-radius;
+			cursor: pointer;
+			box-sizing: border-box;
+			z-index: 1;
+			transition: background-color .3s ease-in-out;
+			transition-delay: 0s;
+			opacity: 0;
+			
+			@include ipad-portrait {
+				display: none;
+			}
+			
+			&:first-of-type {
+				top: 80px;
+				left: 20px;
+				z-index: 2;
+			}
+			
+			&:nth-of-type(2) {
+				top: 20px;
+				right: 20px;
+			}
+			
+			&:nth-of-type(3) {
+				bottom: 0px;
+				right: 20px;
+				
+				.mkdf-icon-info-holder {
+					top: 0;
+					transform: translateY(calc(-100% + 13px));
+					
+					.mkdf-ms-explorer & {
+						-ms-transform: translateY(-100%) translateY(+13px);
+					}
+					
+					&:before {
+						top: auto;
+						bottom: 20px;
+					}
+				}
+			}
+			
+			&:hover {
+				background-color: $first-main-color;
+				color: #fff;
+				
+				.mkdf-icon-info-holder {
+					min-height: 200px;
+					opacity: 1;
+					visibility: visible;
+					
+					.mkdf-icon-info {
+						.mkdf-issc-separator{
+							width: 30px;
+						}
+					}
+				}
+			}
+		}
+	
+		.mkdf-icon-info-holder {
+			position: relative;
+			display: block;
+			width: 225px;
+			min-height: 0;
+			max-height: 240px;
+			top: -61px;
+			left: 81px;
+			padding: 24px 20px 23px;
+			background: $first-main-color;
+			text-align: left;
+			border-radius: $default-border-radius;
+			box-sizing: border-box;
+			opacity: 0;
+			visibility: hidden;
+			transition: all .3s ease-in-out;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 0;
+				height: 0;
+				border-top: 17px solid transparent;
+				border-right: 17px solid $first-main-color;
+				border-bottom: 17px solid transparent;
+				box-sizing: border-box;
+				top: 20px;
+				left: 0;
+				transform: translateX(-100%);
+			}
+		}
+		
+		.mkdf-icon-info {
+			@include mkdfRelativeHolderLayout();
+			overflow: hidden;
+			cursor: default;
+			
+			h4 {
+				margin: 0;
+			}
+			
+			.mkdf-issc-separator {
+				position: relative;
+				display: block;
+				width: 0;
+				height: 2px;
+				margin: 12px 0 9px;
+				background-color: #fff;
+				transition: .2s ease-out;
+			}
+			
+			p {
+				margin: 0 0 11px;
+				line-height: 27px;
+			}
+			
+			a {
+				@include mkdfTagLineStyle(small);
+				color: #fff;
+				
+				&:hover {
+					color: $default-heading-color;
+				}
+			}
+			
+			h4,
+			p {
+				color: #fff;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Items Showcase Custom shortcode style - end
+   ========================================================================== */

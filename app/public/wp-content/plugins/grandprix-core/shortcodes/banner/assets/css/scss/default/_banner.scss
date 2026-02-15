@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Banner shortcode style - begin
+   ========================================================================== */
+
+.mkdf-banner-holder {
+    @include mkdfRelativeHolderLayout();
+	border: 1px solid $default-border-color;
+	box-sizing: border-box;
+	
+	.touch & {
+		cursor: pointer;
+	}
+	
+	&.mkdf-banner-has-image {
+		
+		.mkdf-banner-text-holder {
+			@include mkdfAbsoluteHolderLayout();
+		}
+		
+		.mkdf-banner-custom-mark {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	
+	&.mkdf-visible-on-default {
+		overflow: hidden;
+		
+		.mkdf-banner-text-inner {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			
+			@include ipad-landscape {
+				padding-right: 30%;
+			}
+			
+			@include ipad-portrait {
+				padding-right: 40%;
+			}
+		}
+		
+		&:hover {
+			
+			.mkdf-banner-foreground-image {
+				
+				img {
+					transform: translateX(5%);
+				}
+			}
+		}
+	}
+	
+	&.mkdf-visible-on-hover {
+		
+		&:hover {
+			
+			.mkdf-banner-text-holder {
+				opacity: 1;
+			}
+		}
+		
+		.mkdf-banner-text-holder {
+			opacity: 0;
+			transition: opacity .2s ease-out;
+		}
+	}
+	
+	&.mkdf-disabled {
+		overflow: hidden;
+		
+		&:hover {
+			
+			.mkdf-banner-foreground-image {
+				
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+		
+		.mkdf-banner-text-holder {
+			display: none;
+		}
+	}
+	
+	&.mkdf-banner-info-centered {
+		
+		.mkdf-banner-text-holder {
+			padding: 70px 20px;
+			text-align: center;
+		}
+		
+		.mkdf-banner-custom-mark {
+			left: 0;
+			justify-content: center;
+		}
+		
+		.mkdf-btn.mkdf-btn-simple-predefined {
+			position: relative;
+		}
+	}
+	
+	.mkdf-banner-image {
+		@include mkdfRelativeHolderLayout();
+		
+		img {
+			display: block;
+		}
+	}
+	
+	.mkdf-banner-foreground-image {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 10%;
+		z-index: 2;
+		
+		img {
+			transition: transform .3s ease-in-out;
+			
+			@include laptop-landscape-large {
+				width: 40%;
+			}
+		}
+	}
+	
+	.mkdf-banner-custom-mark {
+		position: relative;
+		display: flex;
+		top: 0;
+		left: 17%;
+		margin-bottom: 42px;
+		font-family: $default-heading-font;
+		font-size: 250px;
+		line-height: .88em;
+		letter-spacing: -.05em;
+		font-weight: 700;
+		color: #f5f5f5;
+		z-index: 1;
+		
+		.mkdf-split-character {
+			opacity: 0;
+			transform: matrix3d(1, 0, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, -30, -1, 1);
+			perspective: 600px;
+			transform-origin: 50% 50% 0px;
+			transition: .3s  cubic-bezier(0.455, 0.03, 0.515, 0.955);
+			transition-delay: -.2s;
+		}
+	}
+	
+	&.mkdf-item-appear {
+		.mkdf-banner-custom-mark {
+			.mkdf-split-character {
+				transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+				opacity: 1;
+				transition: .5s  cubic-bezier(0.455, 0.03, 0.515, 0.955);
+				
+				@for $i from 1 to 15 {
+					&:nth-child(#{$i}) {
+						transition-delay: #{0.05 + $i * .1}s;
+					}
+				}
+			}
+		}
+	}
+	
+	.mkdf-banner-text-holder {
+		padding: 49px 40px 50px;
+		box-sizing: border-box;
+		
+		@media only screen and (min-width: $laptop-landscape-plus-pixel) and (max-width: $laptop-landscape-mac) {
+			padding-right: 46%;
+		}
+		
+		@include ipad-landscape {
+			padding: 13px 35px 20px;
+			
+			.mkdf-btn.mkdf-btn-simple-predefined {
+				
+				.mkdf-btn-line,
+				.mkdf-btn-line-hidden {
+					display: none !important;
+				}
+				
+				&:hover {
+					
+					.mkdf-btn-text {
+						transform: none;
+					}
+				}
+			}
+		}
+		
+		@include ipad-portrait {
+			padding: 25px;
+		}
+	}
+	
+	.mkdf-banner-text-outer {
+		@include mkdfTableLayout();
+	}
+	
+	.mkdf-banner-text-inner {
+		position: relative;
+		display: table-cell;
+		height: 100%;
+		width: 100%;
+		vertical-align: top;
+	}
+	
+	.mkdf-banner-subtitle {
+		@include mkdfTagLineStyle('small');
+		margin: 0 0 4px;
+	}
+	
+	.mkdf-banner-title {
+		margin: 0;
+		
+		.mkdf-banner-title-light {
+			font-weight: 300;
+		}
+	}
+	
+	.mkdf-btn.mkdf-btn-simple-predefined {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 10;
+	}
+
+	.mkdf-banner-link {
+		@include mkdfAbsoluteHolderLayout();
+		z-index: 3;
+	}
+}
+/* ==========================================================================
+   Banner shortcode style - end
+   ========================================================================== */

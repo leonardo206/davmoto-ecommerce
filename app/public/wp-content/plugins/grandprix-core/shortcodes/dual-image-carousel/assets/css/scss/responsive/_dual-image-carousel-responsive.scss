@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Dual Image Carousel shortcode responsive style - begin
+   ========================================================================== */
+
+.mkdf-dual-image-carousel.swiper-container {
+
+	@include laptop-landscape-large {
+		
+		.swiper-wrapper {
+			
+			.mkdf-slide-info {
+				padding: 49px 8% 0;
+			}
+		}
+	}
+
+	@include laptop-landscape-mac {
+		
+		.swiper-wrapper {
+			
+			.mkdf-slide-info-holder {
+				width: 50%;
+			}
+			
+			.mkdf-slide-custom-mark {
+				font-size: 140px;
+			}
+		}
+	}
+	
+	@include ipad-landscape {
+		
+		.swiper-wrapper {
+			
+			.swiper-slide {
+				
+				.mkdf-slide-info {
+					padding: 19px 8% 0;
+				}
+			}
+		}
+	}
+	
+	@include ipad-portrait {
+		
+		.swiper-wrapper {
+			
+			.swiper-slide {
+				
+				.mkdf-slide-foreground-image-holder {
+					margin-top: -25%;
+				}
+			}
+		}
+	}
+	
+	@include phone-landscape {
+		
+		.swiper-wrapper {
+			
+			.swiper-slide {
+				width: 60%;
+				
+				.mkdf-slide-info {
+					padding: 10px 5%;
+				}
+			}
+			
+			.mkdf-slide-info-holder {
+				width: 100%;
+			}
+		}
+		
+		.swiper-pagination-bullets {
+			width: 60%;
+		}
+	}
+	
+	@include phone-portrait {
+		
+		.swiper-wrapper {
+			
+			.swiper-slide {
+				width: 80%;
+				
+				.mkdf-slide-foreground-image-holder {
+					margin-top: -22%;
+				}
+			}
+		}
+		
+		.swiper-pagination-bullets {
+			width: 80%;
+		}
+	}
+}
+
+.mkdf-pagination-synced-slider {
+	
+	@include phone-landscape {
+		width: 60%;
+	}
+	
+	@include phone-portrait {
+		width: 80%;
+	}
+}
+
+/* ==========================================================================
+   Dual Image Carousel shortcode responsive style - end
+   ========================================================================== */

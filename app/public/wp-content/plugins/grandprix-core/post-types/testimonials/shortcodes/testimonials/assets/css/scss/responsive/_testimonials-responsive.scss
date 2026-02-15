@@ -1,0 +1,27 @@
+.mkdf-testimonials-holder {
+    
+    @include ipad-landscape {
+        
+        .mkdf-testimonials {
+            padding: 0 15%;
+        }
+    }
+    
+    @include phone-landscape {
+        
+        .mkdf-testimonials {
+            padding: 0 10%;
+    
+            .owl-nav {
+    
+                .mkdf-button-mark {
+                    display: none;
+                }
+            }
+		
+	        .mkdf-testimonial-title {
+		        font-size: 30px;
+	        }
+        }
+    }
+}

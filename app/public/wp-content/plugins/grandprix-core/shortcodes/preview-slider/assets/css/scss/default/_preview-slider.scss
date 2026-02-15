@@ -1,0 +1,189 @@
+/* ==========================================================================
+# Preview Slider - begin
+========================================================================== */
+
+.mkdf-preview-slider {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	opacity: 0;
+	transition: opacity 0.2s ease-out;
+	
+	.mkdf-background-holder {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: red;
+		z-index: -1;
+		transition: background .4s ;
+		
+	}
+	
+	&.mkdf-preview-slider-loaded {
+		opacity: 1;
+	}
+	
+	.mkdf-ps-images-holder {
+		display: block;
+		width: 60%;
+		vertical-align: middle;
+		position: relative;
+		text-align: left;
+		
+		.mkdf-ps-tablet-holder {
+			position: relative;
+			margin-top: -22.7%;
+			margin-left: 54%;
+			
+			> img {
+				position: relative;
+				z-index: 10;
+			}
+		}
+		
+		.mkdf-ps-tablet-slider {
+			position: absolute;
+			width: 81%;
+			top: 4.5%;
+			left: 3.9%;
+			bottom: 8%;
+			overflow: hidden;
+			z-index: 10;
+			
+			.slick-vertical .slick-slide {
+				border: none;
+			}
+			
+		}
+		
+		.mkdf-ps-laptop-holder {
+			position: relative;
+			margin-left: 5.5%;
+			
+			> img {
+				position: relative;
+				z-index: 5;
+			}
+		}
+		
+		.mkdf-ps-laptop-slider {
+			position: absolute;
+			width: 70.4%;
+			top: 5.4%;
+			left: 5.6%;
+			bottom: 9.8%;
+			background: $default-background-color;
+			overflow: hidden;
+			z-index: 1;
+		}
+		
+		.mkdf-ps-mobile-holder {
+			position: relative;
+			margin-top: -17%;
+			margin-left: 24%;
+			z-index: 20;
+			
+			> img {
+				position: relative;
+				z-index: 10;
+			}
+		}
+		
+		.mkdf-ps-mobile-slider {
+			position: absolute;
+			top: 1.3%;
+			width: 17%;
+			left: 1%;
+			bottom: 1%;
+			background: $default-background-color;
+			overflow: hidden;
+			z-index: 1;
+			border-radius: 10px;
+			box-sizing: border-box;
+		}
+		
+		img {
+			vertical-align: middle;
+		}
+		
+		.mkdf-ps-images-holder-inner {
+			display: block;
+			vertical-align: middle;
+			position: relative;
+			padding: 130px 0;
+		}
+		
+		.slick-track {
+			//override default styles from slick and execute transitions differently
+			/*transition: transform 1s !important;*/
+			//transition-delay: 0.5s !important;
+		}
+	}
+	
+	.mkdf-ps-text-holder {
+		width: 50%;
+		padding: 0 4% 6% 11%;
+		box-sizing: border-box;
+		
+		.mkdf-ps-tagline {
+			@include mkdfTagLineStyle();
+		}
+		
+		.mkdf-ps-title {
+			color: #fff;
+		}
+	}
+	
+	.mkdf-ps-dots-holder {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		transform: translate(112px, 0) rotate(90deg);
+		transform-origin: 0;
+		
+		.slick-list {
+			width: 354px;
+			
+			.slick-track {
+				display: block;
+				margin: 0 20px;
+				transform: none!important;
+				
+				.mkdf-ps-dot {
+					width: 36px;
+					height: 36px;
+					margin: 16px;
+					border-radius: $default-border-radius;
+					background-color: $first-main-color;
+					cursor: pointer;
+					
+					&.slick-current {
+						outline: 1px solid $default-text-color;
+						outline-offset: 8px;
+					}
+				}
+			}
+		}
+		
+		.mkdf-ps-additional-text {
+			@include mkdfHeadingStyle(h6);
+			color: #fff;
+			
+			&:first-child:after,
+			&:last-child:before {
+				content: '';
+				@include mkdfCategorySeparator;
+				margin: 0 17px;
+				width: 30px;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+# Preview Slider - end
+========================================================================== */

@@ -1,0 +1,7 @@
+.mkdf-content .mkdf-content-inner > .mkdf-container > .mkdf-container-inner { padding: 130px 0px 92px 0px;}.mkdf-page-footer .mkdf-footer-top-holder { background-color: #0d0d0d;}.mkdf-page-footer .mkdf-footer-bottom-holder { background-color: #000000;}.mkdf-header-box .mkdf-top-bar-background { height: 70px;}.mkdf-header-box .mkdf-top-bar-background { background-color: rgba(245, 245, 245, 0%);}.mkdf-top-bar { background-color: rgba(245, 245, 245, 0%);}.mkdf-page-header .mkdf-menu-area { background-color: rgba(245, 245, 245, 0%);}
+/* Fix logo desktop: forza altezza (logo 512x512 diventa troppo grande) */
+.mkdf-page-header .mkdf-menu-area .mkdf-logo-wrapper a { height: 80px !important; }
+.mkdf-page-header .mkdf-sticky-header .mkdf-logo-wrapper a { height: 80px !important; }
+/* Fix logo mobile: header mobile è 70px, il logo deve stare dentro */
+.mkdf-mobile-header .mkdf-mobile-logo-wrapper a { height: 50px !important; }
+.mkdf-mobile-header .mkdf-mobile-logo-wrapper a img { height: 100% !important; width: auto; }

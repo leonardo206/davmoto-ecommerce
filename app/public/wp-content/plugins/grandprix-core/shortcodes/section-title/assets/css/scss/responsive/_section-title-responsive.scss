@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Section Title shortcode responsive styles - begin
+   ========================================================================== */
+
+@include ipad-portrait {
+	
+	.mkdf-section-title-holder {
+		padding: 0 !important; // it can be set inline in shortcode options
+		
+		&.mkdf-st-disable-title-break {
+			
+			.mkdf-st-title {
+				
+				br {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+	
+	.mkdf-section-title-holder {
+		
+		&.mkdf-st-split {
+			
+			.mkdf-st-inner {
+				flex-direction: column;
+				align-items: flex-start;
+				margin: 0;
+				
+				> * {
+					padding: 0;
+				}
+			}
+			
+			.mkdf-st-title {
+				margin: 21px 0 0 -3px;
+				padding: 0;
+				text-align: left;
+				
+				&:after {
+					display: none;
+				}
+				
+				.mkdf-sts-separator {
+					display: none;
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Section Title shortcode responsive styles - end
+   ========================================================================== */
+
+

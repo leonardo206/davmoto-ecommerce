@@ -1,0 +1,296 @@
+/* ==========================================================================
+# Preview Slider - begin
+========================================================================== */
+
+@include ipad-landscape {
+	
+	.mkdf-ps-images-holder {
+		
+		.mkdf-ps-tablet-holder {
+			right: 2%;
+		}
+	}
+}
+
+.mkdf-preview-slider {
+	
+	@media only screen and (max-width: 1600px) {
+		
+		.mkdf-ps-images-holder {
+			
+			.mkdf-ps-images-holder-inner {
+				padding-right: 25px;
+			}
+			
+			.mkdf-ps-laptop-slider {
+				width: 86.8%;
+				top: 4.5%;
+				left: 6.6%;
+				bottom: 9.8%;
+			}
+			
+			.mkdf-ps-tablet-slider {
+				width: 91%;
+				top: 5.5%;
+			}
+			
+			.mkdf-ps-mobile-slider {
+				width: 21%;
+				top: 2.3%;
+			}
+		}
+	}
+	
+	@include laptop-landscape-large {
+		
+		.mkdf-ps-images-holder {
+			
+			.mkdf-ps-laptop-slider {
+				width: 86.8%;
+			}
+			
+			.mkdf-ps-tablet-slider {
+				width: 91%;
+			}
+			
+			.mkdf-ps-mobile-slider {
+				width: 23%;
+			}
+		}
+	}
+	
+	@include laptop-landscape-mac {
+		
+		.mkdf-ps-images-holder {
+			
+			.mkdf-ps-laptop-holder {
+				margin-left: 0;
+			}
+			
+			.mkdf-ps-laptop-slider {
+				width: 87.2%;
+			}
+			
+			.mkdf-ps-tablet-slider {
+				width: 91%;
+			}
+			
+			.mkdf-ps-mobile-holder {
+				margin-top: -22%;
+			}
+			
+			.mkdf-ps-mobile-slider {
+				width: 25.1%;
+			}
+		}
+	}
+	
+	@include laptop-landscape-medium {
+		
+		.mkdf-ps-images-holder {
+			
+			.mkdf-ps-tablet-slider {
+				width: 91.2%;
+			}
+			
+			.mkdf-ps-mobile-slider {
+				width: 26.5%;
+			}
+		}
+	}
+	
+	@include ipad-landscape {
+		display: block;
+		
+		.mkdf-ps-dots-holder {
+			transform: translate(97px,0) rotate(90deg);
+		}
+		
+		.mkdf-ps-images-holder {
+			width: 100%;
+			max-width: 100%;
+			display: inline-block;
+			vertical-align: middle;
+			padding: 0;
+			margin-bottom: -5%;
+			
+			.mkdf-ps-images-holder-inner {
+				padding-top: 25px;
+				padding-bottom: 100px;
+			}
+			
+			.mkdf-ps-laptop-holder {
+				margin-left: 15%;
+			}
+			
+			.mkdf-ps-laptop-slider {
+				width: 81%;
+				left: 6%;
+			}
+			
+			.mkdf-ps-tablet-slider {
+				width: 82.7%;
+				left: 4%;
+			}
+			
+			.mkdf-ps-mobile-holder {
+				width: 40%;
+				margin-top: -27%;
+			}
+			
+			.mkdf-ps-mobile-slider {
+				width: 34%;
+				top: 2%;
+			}
+		}
+		
+		.mkdf-ps-text-holder {
+			width: 100%;
+			padding: 8% 4% 0 16.5%;
+			
+			&.right {
+				padding: 0;
+			}
+		}
+	}
+	
+	@include ipad-portrait {
+		
+		.mkdf-ps-dots-holder {
+			transform: translate(77px,0) rotate(90deg);
+		}
+		
+		.mkdf-ps-images-holder {
+			
+			.mkdf-ps-laptop-holder {
+				width: 75%;
+				bottom: -10%;
+				left: 0;
+			}
+			
+			.mkdf-ps-laptop-slider {
+				width: 87%;
+				left: 7%;
+			}
+			
+			.mkdf-ps-tablet-holder {
+				width: 42%;
+				left: 0;
+				margin-left: 55%;
+			}
+			
+			.mkdf-ps-tablet-slider {
+				width: 92%;
+				left: 4%;
+			}
+			
+			.mkdf-ps-mobile-holder {
+				width: 15%;
+				margin-top: -27%;
+				bottom: 2%;
+			}
+			
+			.mkdf-ps-mobile-slider {
+				width: 90%;
+				top: 2%;
+				left: 5%;
+			}
+		}
+		
+		.mkdf-ps-text-holder {
+			padding: 10% 4% 0 16.5%;
+		}
+	}
+	
+	@include phone-landscape {
+		
+		.mkdf-ps-dots-holder {
+			transform: translate(55px, 9em) rotate(90deg);
+			
+			.mkdf-ps-additional-text {
+				display: none;
+			}
+		}
+		
+		.mkdf-ps-text-holder {
+			padding: 130px 4% 0 26.5%;
+			
+			.mkdf-ps-title {
+				font-size: 42px;
+			}
+		}
+		
+		.mkdf-ps-images-holder {
+			
+			.mkdf-ps-images-holder-inner {
+				padding: 0px 0 150px;
+			}
+			
+			.mkdf-ps-laptop-holder {
+				width: 75%;
+				left: 8%;
+			}
+			
+			.mkdf-ps-laptop-slider {
+				width: 86%;
+				left: 7%;
+			}
+			
+			.mkdf-ps-tablet-holder {
+				width: 42%;
+				left: 0;
+				margin-left: 55%;
+			}
+			
+			.mkdf-ps-tablet-slider {
+				width: 92%;
+				left: 4%;
+			}
+			
+			.mkdf-ps-mobile-holder {
+				margin-top: -25%;
+				width: 15%;
+				margin-left: 35%;
+			}
+			
+			.mkdf-ps-mobile-slider {
+				width: 90%;
+				top: 2%;
+				left: 5%;
+			}
+		}
+		
+		.mkdf-ps-dots-holder {
+			left: 0;
+			
+			.mkdf-ps-additional-text {
+				min-width: 130px;
+				
+				&:first-child:after {
+					display: none;
+				}
+				
+				&:last-child:before {
+					display: none;
+				}
+			}
+			
+			.slick-list {
+				width: 320px;
+				
+				.slick-track {
+					margin: 0;
+					
+					.mkdf-ps-dot {
+						width: 26px;
+						height: 26px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+# Preview Slider - end
+========================================================================== */

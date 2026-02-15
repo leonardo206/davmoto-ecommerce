@@ -1,0 +1,281 @@
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+
+.mkdf-video-button-holder {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 200px;
+	min-height: 82px;
+	
+	&.mkdf-vb-has-img {
+		
+		.mkdf-video-button-play,
+		.mkdf-video-button-play-image {
+			justify-content: center;
+		}
+		
+		.mkdf-video-button-image {
+			@include mkdfRelativeHolderLayout();
+			
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+		
+		.mkdf-video-button-play-inner {
+			display: flex;
+			justify-content: center;
+			
+			.mkdf-video-button-play-image-holder {
+				position: relative;
+				display: inline-block;
+				z-index: 1;
+			}
+		}
+	}
+	
+	.mkdf-video-button-play,
+	.mkdf-video-button-play-image {
+		@include mkdfAbsoluteHolderLayout();
+		display: flex;
+		align-items: center;
+	}
+	
+	.mkdf-video-button-play {
+		justify-content: flex-end;
+		
+		.mkdf-video-button-play-inner {
+			position: relative;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.mkdf-video-button-play-holder {
+			display: flex;
+			align-items: center;
+			margin-left:-50px;
+			overflow: hidden;
+			position: relative;
+			
+			.mkdf-ms-explorer  &{
+				display: block;
+			}
+			
+			.mkdf-video-button-play-text {
+				position: relative;
+				margin-right: -40px;
+				
+				.mkdf-ms-explorer  &{
+					top: -35px;
+				}
+			}
+			
+			.mkdf-btn-line-hidden {
+				position: absolute;
+				display: inline-block;
+				width: 54px;
+				height: 1px;
+				line-height: 1;
+				vertical-align: middle;
+				top: 50%;
+				left: 0;
+				transform-origin: left;
+				transform: scaleX(0);
+				opacity: .4;
+				background-color: currentColor;
+				transition: .3s ease-in-out;
+				
+				.mkdf-edge & {
+					max-height: 1px;
+					overflow: hidden;
+				}
+			}
+			
+			.mkdf-btn-text {
+				position: relative;
+				display: inline-block;
+				transition: .3s ease-in-out;
+				transform: translateX(0);
+				padding: 0 18px 0 0;
+				font-family: $default-heading-font;
+				font-size: 14px;
+				letter-spacing: 0.1em;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+			
+			.mkdf-btn-line {
+				position: relative;
+				display: inline-block;
+				width: 74px;
+				height: 1px;
+				vertical-align: middle;
+				line-height: 1;
+				transform-origin: right;
+				transform: scaleX(1);
+				opacity: 1;
+				background-color: currentColor;
+				transition: .3s ease-in-out;
+				
+				.mkdf-edge & {
+					max-height: 1px;
+					overflow: hidden;
+				}
+				
+				.mkdf-ms-explorer  &{
+					height: .5px;
+				}
+			}
+			
+			.ion-ios-play {
+				display: inline-block;
+				vertical-align: middle;
+				line-height: 1;
+				font-size: 13px;
+				width: 6px;
+				margin-left: -3px;
+			}
+			
+			&:hover {
+				.mkdf-btn-line-hidden {
+					transform: scaleX(1);
+					opacity: 1;
+				}
+				
+				.mkdf-btn-text {
+					transform: translateX(73px);
+				}
+				
+				.mkdf-btn-line {
+					opacity: .4;
+					transform: scaleX(0);
+					transform-origin: right;
+				}
+				
+			}
+		}
+	}
+	
+	.mkdf-vb-tagline {
+		@include mkdfTagLineStyle('large');
+	}
+	
+	.mkdf-vb-title {
+		margin: 9px 0 0;
+		color: #fff;
+	}
+	
+	.mkdf-video-button-image {
+		@include mkdfRelativeHolderLayout();
+		
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+	
+	.mkdf-video-button-play {
+		color: #fff;
+		font-size: 13px;
+		line-height: 1;
+	}
+	
+	.mkdf-video-button-link {
+		@include mkdfAbsoluteHolderLayout();
+	}
+	
+	&.mkdf-vb-has-hover-image {
+		
+		&:hover {
+			
+			img {
+				
+				&:first-child {
+					opacity: 0;
+				}
+				
+				&:nth-child(2) {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	&.mkdf-vb-tat-position-right {
+		
+		.mkdf-vb-tat-holder {
+			display: inline-block;
+			width: auto;
+			float: right;
+			text-align: left;
+		}
+	}
+	
+	.mkdf-video-button-play-image {
+		
+		img {
+			display: block;
+			margin: 0 auto;
+			transition: opacity .3s ease-in-out;
+			
+			&:first-child {
+				position: relative;
+				opacity: 1;
+			}
+			
+			&:nth-child(2) {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				opacity: 0;
+				transform: translateX(-50%) translateZ(0);
+				
+				.rev_slider_wrapper & {
+					transform: translateZ(0);
+				}
+			}
+		}
+	}
+	
+	.mkdf-video-button-outer {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		padding: 0 40px;
+		
+		&.mkdf-content-in-grid {
+			padding: 0;
+		}
+	}
+	
+	.mkdf-video-button-inner {
+		
+		&.mkdf-grid {
+			display: block;
+			
+			.mkdf-ms-explorer & {
+				margin: 0;
+			}
+		}
+		
+		.mkdf-vb-tat-holder {
+			
+			@include ipad-landscape {
+				display: none;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */

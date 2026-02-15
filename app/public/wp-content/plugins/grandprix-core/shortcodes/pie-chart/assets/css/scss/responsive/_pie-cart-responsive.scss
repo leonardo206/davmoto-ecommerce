@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Pie Cart shortcode responsive styles - begin
+   ========================================================================== */
+
+@include ipad-portrait {
+	
+	.mkdf-pie-chart-holder {
+		flex-direction: column;
+		
+		.mkdf-pc-text-holder {
+			width: 100%;
+			padding: 25px 0 0;
+			text-align: center;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Pie Cart shortcode responsive styles - end
+   ========================================================================== */
+
+

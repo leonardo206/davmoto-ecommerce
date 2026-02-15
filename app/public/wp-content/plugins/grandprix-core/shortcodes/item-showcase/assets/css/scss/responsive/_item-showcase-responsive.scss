@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Item Showcase shortcode responsive style - begin
+   ========================================================================== */
+
+@media only screen and (min-width: $laptop-landscape-plus-pixel) and (max-width: 1399px) {
+	
+	.mkdf-item-showcase-holder {
+		
+		.mkdf-is-image {
+			width: 34%;
+		}
+		
+		.mkdf-is-item-holder {
+			width: 33%;
+		}
+	}
+}
+
+@include laptop-landscape {
+	
+	.mkdf-item-showcase-holder {
+		
+		.mkdf-is-image {
+			position: absolute;
+			left:0;
+			width: 50%;
+			height: 100%;
+			margin-top: 0 !important; //override inline margin if set by user
+			
+			img {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+		}
+		
+		.mkdf-is-item-holder {
+			
+			&.mkdf-is-left-holder,
+			&.mkdf-is-right-holder {
+				float: right;
+				width: 50%;
+				padding: 0 0 0 50%;
+			}
+			
+			&.mkdf-is-right-holder {
+				margin: 36px 0 0;
+			}
+		}
+
+	  	.mkdf-is-item {
+		    margin: 36px 0 0;
+		    
+		    &.mkdf-is-left {
+			    text-align: left;
+			    flex-direction: row-reverse;
+		    }
+		    
+		    &.mkdf-is-left,
+		    &.mkdf-is-right {
+			    padding: 0 0 0 20px;
+			  
+			    .mkdf-is-content {
+				    padding: 0 0 0 13px;
+			    }
+		    }
+		    
+		    &:not(.mkdf-appeared) {
+			    transform: translateX(-40px);
+		    }
+	  	}
+	}
+}
+
+@include ipad-portrait {
+	
+	.mkdf-item-showcase-holder {
+		display: flex;
+		flex-direction: column;
+		
+		.mkdf-is-image {
+			width: 100%;
+			position: relative;
+			text-align: center;
+			order: 1;
+			
+			img {
+				position: relative;
+				display: inline-block;
+				left: auto;
+				right: auto;
+				transform: none;
+			}
+		}
+		
+		.mkdf-is-item-holder {
+			
+			&.mkdf-is-left-holder {
+				margin-top: 36px;
+				order: 2;
+			}
+			
+			&.mkdf-is-right-holder {
+				order: 3;
+			}
+			
+			&.mkdf-is-left-holder,
+			&.mkdf-is-right-holder {
+				position: relative;
+				width: 100%;
+				padding: 0;
+				float: none;
+			}
+		}
+		
+		.mkdf-is-item {
+			
+			&.mkdf-is-left,
+			&.mkdf-is-right {
+				padding: 0;
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+	
+	.mkdf-item-showcase-holder {
+		
+		.mkdf-is-item-holder {
+			
+			&.mkdf-is-left-holder,
+			&.mkdf-is-right-holder {
+				float: none;
+				width: 100%;
+				padding: 0;
+			}
+		}
+		
+		.mkdf-is-item {
+			opacity: 1;
+			-webkit-transform: translateX(0) translateY(0) !important;
+			-moz-transform: translateX(0) translateY(0) !important;
+			transform: translateX(0) translateY(0) !important;
+			
+			&.mkdf-is-left,
+			&.mkdf-is-right {
+				padding-left: 0;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Item Showcase shortcode responsive style - end
+   ========================================================================== */
