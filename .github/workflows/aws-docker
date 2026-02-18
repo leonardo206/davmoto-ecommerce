@@ -18,5 +18,14 @@ jobs:
           script: |
             cd /home/ubuntu/app
             git pull origin main 
+            
+            DB_NAME=${{ secrets.DB_NAME }} \
+            DB_USER=${{ secrets.DB_USER }} \
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }} \
+            DB_ROOT_PASSWORD=${{ secrets.DB_ROOT_PASSWORD }} \
+            WP_HOME=${{ secrets.WP_HOME }} \
+            WP_SITEURL=${{ secrets.WP_SITEURL }} \
+            ENVIRONMENT=production \
             docker-compose up -d --build
+            
             docker image prune -f
