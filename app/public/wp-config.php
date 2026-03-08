@@ -73,7 +73,14 @@ $table_prefix = 'wp_';
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-
+/**
+ * Cognito Auth: bypass in locale (HTTP), attivo in produzione (HTTPS).
+ * In locale (davmoto.local) usa login WordPress; in produzione (dav.motorcycles) usa Cognito.
+ */
+if ( ! defined( 'COGNITO_AUTH_BYPASS' ) ) {
+	$is_local_host = isset( $_SERVER['HTTP_HOST'] ) && $_SERVER['HTTP_HOST'] === 'davmoto.local';
+	define( 'COGNITO_AUTH_BYPASS', $is_local_host );
+}
 
 /**
  * For developers: WordPress debugging mode.
